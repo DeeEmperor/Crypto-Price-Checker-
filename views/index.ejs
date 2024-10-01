@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Price Checker</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Cryptocurrency Price Checker</h1>
+        <form action="/check-price" method="get">
+            <input type="text" name="coin" placeholder="Enter a crypto symbol (e.g., btc)" required>
+            <button type="submit">Check Price</button>
+        </form>
+
+        <% if (price) { %>
+            <div class="result">
+                <h2>The current price of <%= coin %> is $<%= price %>
+                </h2>
+            </div>
+            <% } %>
+
+                <% if (error) { %>
+                    <div class="error">
+                        <h2>
+                            <%= error %>
+                        </h2>
+                    </div>
+                    <% } %>
+    </div>
+</body>
+
+</html>
